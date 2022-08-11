@@ -14,6 +14,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <Tree people={familyTree2} />
+        <Tree people={familyTree} />
     </React.StrictMode>,
 );
