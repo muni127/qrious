@@ -134,7 +134,7 @@ export function Tree({
     const coupledPeople = findUnqiuePeople(Lodash.flatten(couples));
     const singleImmediateChildren = findImmediateChildren(people, parents).filter((person) => isSingle(coupledPeople, person));
     const usedPeople = coupledPeople.concat(singleImmediateChildren);
-    const unprocessedPeople = people.filter((person) => !findPerson(usedPeople, person));
+    let unprocessedPeople = people.filter((person) => !findPerson(usedPeople, person));
     const hasParents = parents.length > 0;
     const childrenCount = couples.length + singleImmediateChildren.length;
     const hasChildren = childrenCount > 0;
@@ -178,12 +178,18 @@ export function Tree({
                                     </>
                                 )
                                 : null} */}
-                            {couples.map((couple) => ( // Render the current parent's children
-                                <Tree key={generateTreeId(couple)}
-                                    people={findRelatives(unprocessedPeople, couple)}
-                                    parents={couple}
-                                />
-                            ))}
+                            {couples.map((couple) => { // Render the current parent's children
+                                const coupleRelatives = findRelatives(unprocessedPeople, couple);
+                                // Make sure we don't pass on duplicate relatives
+                                unprocessedPeople = unprocessedPeople.filter((person) => !findPerson(coupleRelatives, person));
+
+                                return (
+                                    <Tree key={generateTreeId(couple)}
+                                        people={coupleRelatives}
+                                        parents={couple}
+                                    />
+                                );
+                            })}
                             {singleImmediateChildren.map((singleChild) => ( // Render the current single children
                                 <Tree key={generateTreeId([singleChild])}
                                     people={[]}
