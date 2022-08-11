@@ -16,7 +16,7 @@ export const familyTree3 = [
     {
         id: 5555,
         name: 'Tammy',
-        children: [77775],
+        children: [77775, 777756],
         gender: 'male',
         parents: [1231239887112, 2351232112252],
     },
@@ -37,7 +37,7 @@ export const familyTree3 = [
     {
         id: 317849882,
         name: 'Sara',
-        children: [77775],
+        children: [77775, 777756],
         gender: 'female',
         parents: [7777, 23123122],
     },
@@ -46,6 +46,13 @@ export const familyTree3 = [
         name: 'Luke',
         children: [],
         gender: 'male',
+        parents: [317849882, 5555],
+    },
+    {
+        id: 777756,
+        name: 'Lisa',
+        children: [],
+        gender: 'female',
         parents: [317849882, 5555],
     },
 ];

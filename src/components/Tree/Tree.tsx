@@ -131,7 +131,7 @@ export function Tree({
     parents = [],
 }: TreeProps) {
     const couples = findOrphansCouples(people);
-    const coupledPeople = Lodash.flatten(couples);
+    const coupledPeople = findUnqiuePeople(Lodash.flatten(couples));
     const singleImmediateChildren = findImmediateChildren(people, parents).filter((person) => isSingle(coupledPeople, person));
     const usedPeople = coupledPeople.concat(singleImmediateChildren);
     const unprocessedPeople = people.filter((person) => !findPerson(usedPeople, person));
