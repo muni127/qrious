@@ -1,0 +1,51 @@
+export const familyTree3 = [
+    {
+        id: 2351232112252,
+        name: 'Sally',
+        children: [5555],
+        gender: 'female',
+        parents: [],
+    },
+    {
+        id: 1231239887112,
+        name: 'Billy',
+        children: [5555],
+        gender: 'male',
+        parents: [],
+    },
+    {
+        id: 5555,
+        name: 'Tammy',
+        children: [77775],
+        gender: 'male',
+        parents: [1231239887112, 2351232112252],
+    },
+    {
+        id: 7777,
+        name: 'Suzie',
+        gender: 'female',
+        children: [317849882],
+        parents: [],
+    },
+    {
+        id: 23123122,
+        name: 'Sam',
+        gender: 'male',
+        children: [317849882],
+        parents: [],
+    },
+    {
+        id: 317849882,
+        name: 'Sara',
+        children: [77775],
+        gender: 'female',
+        parents: [7777, 23123122],
+    },
+    {
+        id: 77775,
+        name: 'Luke',
+        children: [],
+        gender: 'male',
+        parents: [317849882, 5555],
+    },
+];

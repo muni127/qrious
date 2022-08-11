@@ -1,0 +1,84 @@
+.node {
+    display: flex;
+    height: 64px;
+    width: 300px;
+    margin: 32px 16px;
+    text-align: center;
+}
+
+.lane {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.lane > .node:first-child {
+    margin-bottom: 8px;
+}
+
+.lane > .node:last-child {
+    margin-top: 8px;
+}
+
+.lane > .node:only-child {
+    margin-top: 32px;
+}
+
+.row {
+    align-self: center;
+    display: flex;
+}
+
+.row.is-children {
+    top: 208px;
+}
+
+.row:first-child {
+    top: 0;
+}
+
+/* .line {
+    position: absolute;
+    display: flex;
+    border-radius: 0;
+    border-top: black 1px solid;
+    border-left: black 1px solid;
+    border-right: black 1px solid;
+    height: 32px;
+    left: 168px;
+    right: 168px;
+}
+
+.line.parent-line {
+    border-top: 0;
+    border-right: 0;
+    height: 32px;
+    align-self: center;
+    top: -32px;
+    left: 50%;
+    width: 1px;
+}
+
+.line.odd-child-line {
+    border-top: 0;
+    border-right: 0;
+    height: 32px;
+    align-self: center;
+    left: 50%;
+    width: 1px;
+    top: 0;
+} */
+
+.node > .icon {
+    margin: 0 18px;
+    width: 32px;
+}
+
+.node.male {
+    background-color: rgb(237 245 247);
+
+}
+
+.node.female {
+    background-color: rgb(247 234 241);
+}
